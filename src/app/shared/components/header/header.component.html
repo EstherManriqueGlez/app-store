@@ -1,8 +1,5 @@
   <mat-toolbar color="primary">
     <span>My Store</span>
-
-    {{quantity$ | async | json}} - Quantity
-    {{total$ | async | json}} - Total
-
+    <span class="spacer"></span>
+    <app-cart></app-cart>
   </mat-toolbar>
-

@@ -1,0 +1,17 @@
+<div class="container">
+  <form>
+    <mat-form-field>
+      <input
+        matImput
+        placeholder="Name"
+        required
+        [(ngModel)]="model.name"
+        name="name"
+        #name="ngModel"
+      >
+      <mat-error *ngIf="!name.valid || name.pristine">Name is required</mat-error>
+    </mat-form-field>
+
+    
+  </form>
+</div>
