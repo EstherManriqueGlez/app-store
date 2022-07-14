@@ -1,0 +1,15 @@
+.card {
+  margin: 8px;
+  min-height: 180px;
+  min-width: 400px;
+  max-width: 400px;
+  height: 100%;
+
+  .card-title {
+    text-align: center;
+  }
+
+  button {
+    width: 100%;
+  }
+}
