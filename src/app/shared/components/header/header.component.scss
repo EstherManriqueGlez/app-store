@@ -1,3 +1,17 @@
-.spacer {
-  flex: 1 1 auto;
+mat-toolbar {
+  a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  app-cart:hover {
+    background-color: rgb(4, 172, 194);
+    cursor: pointer;
+    transition: all ease-in-out;
+    padding: .4rem;
+  }
 }
