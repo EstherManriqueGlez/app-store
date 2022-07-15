@@ -35,7 +35,9 @@ export class CheckoutComponent implements OnInit {
     private shoppingCartService: ShoppingCartService, 
     private productService: ProductsService,
     private router: Router,
-    ) { }
+    ) { 
+      // this.checkIfCartisEmpty();
+    }
 
   ngOnInit(): void {
     this.getStores();
@@ -98,5 +100,17 @@ export class CheckoutComponent implements OnInit {
       tap((products: Product[]) => this.cart = products)
     ).subscribe()
   }
+
+  // private checkIfCartisEmpty(): void {
+  //   this.shoppingCartService.cartAction$
+  //   .pipe(
+  //     tap((products: Product[]) => {
+  //       if(Array.isArray(products) && !products.length) {
+  //         this.router.navigate(['/products']);
+  //       }
+  //     })
+  //   )
+  //   .subscribe()
+  // }
 
 }

@@ -65,7 +65,7 @@
       "price": 5,
       "description": "En Hackeando del cerebro de tus compradores, Corti nos revela cómo muchas compañías crean productos digitales o procesos de venta capaces de conectar con la psicología del comprador.",
       "categoryId": 1,
-      "stock": 8
+      "stock": 5
     },
     {
       "id": 3,
@@ -73,7 +73,7 @@
       "price": 17,
       "description": "In this book, the reader will be able to focus on one concept of Angular in deep.",
       "categoryId": 1,
-      "stock": 10
+      "stock": 7
     },
     {
       "id": 4,
@@ -89,7 +89,7 @@
       "price": 399,
       "description": "5K Video - Shoot stunning video with up to 5K resolution, perfect for maintaining detail even when zooming in",
       "categoryId": 2,
-      "stock": 10
+      "stock": 9
     },
     {
       "id": 6,
@@ -197,6 +197,27 @@
       "date": "15/7/2022",
       "isDelivery": false,
       "id": 7
+    },
+    {
+      "name": "Pedro Pérez",
+      "store": {
+        "id": 2,
+        "name": "Store Alcalá",
+        "address": "Calle de Alcalá, 21",
+        "city": "Madrid",
+        "openingHours": "10:00 - 14:00 and 17:00 - 20:30"
+      },
+      "date": "15/7/2022",
+      "isDelivery": false,
+      "id": 8
+    },
+    {
+      "name": "Alberto García",
+      "shippingAddress": "Alvaro Obregón 300",
+      "city": "México",
+      "date": "15/7/2022",
+      "isDelivery": true,
+      "id": 9
     }
   ],
   "detailsOrders": [
@@ -294,6 +315,16 @@
       "details": [],
       "orderId": 7,
       "id": 7
+    },
+    {
+      "details": [],
+      "orderId": 8,
+      "id": 8
+    },
+    {
+      "details": [],
+      "orderId": 9,
+      "id": 9
     }
   ]
 }
