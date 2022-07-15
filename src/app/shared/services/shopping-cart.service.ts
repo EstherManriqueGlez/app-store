@@ -32,6 +32,12 @@ export  class ShoppingCartService {
     this.calcTotal();
   }
 
+  resetCart(): void {
+    this.cartSubject.next([]);
+    this.totalSubject.next(0);
+    this.quantitySubject.next(0);
+  }
+
   private addToCart(product: Product): void {
     const isProductInCart = this.products.find(({ id }) => id === product.id);
     if(isProductInCart) {
@@ -51,5 +57,4 @@ export  class ShoppingCartService {
     const total = this.products.reduce((acc, prod) => acc += (prod.price * prod.qty), 0);
     this.totalSubject.next(total);
   }
-
 }
