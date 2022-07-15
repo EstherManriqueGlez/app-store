@@ -8,6 +8,7 @@ import { Product } from "src/app/pages/products/interfaces/product.interface";
 })
 
 export  class ShoppingCartService {
+
   products: Product[] = [];
 
   private cartSubject = new BehaviorSubject<Product[]>([]);
@@ -36,6 +37,7 @@ export  class ShoppingCartService {
     this.cartSubject.next([]);
     this.totalSubject.next(0);
     this.quantitySubject.next(0);
+    this.products = [];
   }
 
   private addToCart(product: Product): void {
