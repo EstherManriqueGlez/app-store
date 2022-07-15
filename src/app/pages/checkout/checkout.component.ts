@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { switchMap, tap } from 'rxjs';
+import { delay, switchMap, tap } from 'rxjs/operators';
 import { Details, Order } from 'src/app/shared/interfaces/order.interface';
 import { Store } from 'src/app/shared/interfaces/stores.interface';
 import { DataService } from 'src/app/shared/services/data.service';
 import { OrderService } from 'src/app/shared/services/order.service';
 import { ShoppingCartService } from 'src/app/shared/services/shopping-cart.service';
 import { Product } from '../products/interfaces/product.interface';
+import { ProductsService } from '../products/services/products.service';
 
 @Component({
   selector: 'app-checkout',
@@ -28,7 +29,13 @@ export class CheckoutComponent implements OnInit {
   cart: Product[] = [];
   stores: Store[] = [];
 
-  constructor(private dataService: DataService, private orderService: OrderService, private shoppingCartService: ShoppingCartService, private router: Router) { }
+  constructor(
+    private dataService: DataService, 
+    private orderService: OrderService, 
+    private shoppingCartService: ShoppingCartService, 
+    private productService: ProductsService,
+    private router: Router,
+    ) { }
 
   ngOnInit(): void {
     this.getStores();
@@ -45,7 +52,7 @@ export class CheckoutComponent implements OnInit {
     const data: Order = {
       ...formData,
       date: this.getCurrentDate(),
-      pickup: this.isDelivery,
+      isDelivery: this.isDelivery,
     }
     this.orderService.saveOrder(data)
     .pipe(
@@ -54,8 +61,10 @@ export class CheckoutComponent implements OnInit {
         const details = this.prepareDetails();
         return this.orderService.saveDetailsOrder({details, orderId})
       }),
-      tap( res => console.log('Finish ->', res)),
-    ).subscribe()
+      tap( () => this.router.navigate(['/checkout/thank-you-page'])),
+      delay(2000),
+      tap(() => this.shoppingCartService.resetCart())
+    ).subscribe();
   }
 
   private getStores(): void {
@@ -72,7 +81,13 @@ export class CheckoutComponent implements OnInit {
     const details: Details[] = [];
     this.cart.forEach((product: Product) => {
       const {id: orderId, name: productName, qty: quantity, stock} = product;
-      details.push({orderId, productName, quantity})
+      const updateStock = (stock - quantity);
+
+      this.productService.updateStock(orderId, updateStock)
+      .pipe(
+        tap(() => details.push({orderId, productName, quantity}))
+      )
+      .subscribe()
     })
     return details;
   }

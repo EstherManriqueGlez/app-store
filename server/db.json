@@ -65,7 +65,7 @@
       "price": 5,
       "description": "En Hackeando del cerebro de tus compradores, Corti nos revela cómo muchas compañías crean productos digitales o procesos de venta capaces de conectar con la psicología del comprador.",
       "categoryId": 1,
-      "stock": 10
+      "stock": 8
     },
     {
       "id": 3,
@@ -137,6 +137,66 @@
       "date": "15/7/2022",
       "pickup": false,
       "id": 2
+    },
+    {
+      "name": "Deworming",
+      "store": {
+        "id": 3,
+        "name": "Chambers and West Broadway",
+        "address": "125 Chambers Street",
+        "city": "New York",
+        "openingHours": "10:00 - 14:00 and 17:00 - 20:30"
+      },
+      "date": "15/7/2022",
+      "pickup": false,
+      "id": 3
+    },
+    {
+      "name": "Alberto García",
+      "shippingAddress": "Eje central 500",
+      "city": "CDMX",
+      "date": "15/7/2022",
+      "isDelivery": true,
+      "id": 4
+    },
+    {
+      "name": "Sergio Andrade",
+      "store": {
+        "id": 5,
+        "name": "Monmouth St",
+        "address": "11 Monmouth Street",
+        "city": "London",
+        "openingHours": "10:00 - 14:00 and 17:00 - 20:30"
+      },
+      "date": "15/7/2022",
+      "isDelivery": false,
+      "id": 5
+    },
+    {
+      "name": "Alberto García",
+      "store": {
+        "id": 2,
+        "name": "Store Alcalá",
+        "address": "Calle de Alcalá, 21",
+        "city": "Madrid",
+        "openingHours": "10:00 - 14:00 and 17:00 - 20:30"
+      },
+      "date": "15/7/2022",
+      "isDelivery": false,
+      "id": 6
+    },
+    {
+      "name": "Alberto García",
+      "store": {
+        "id": 2,
+        "name": "Store Alcalá",
+        "address": "Calle de Alcalá, 21",
+        "city": "Madrid",
+        "openingHours": "10:00 - 14:00 and 17:00 - 20:30"
+      },
+      "date": "15/7/2022",
+      "isDelivery": false,
+      "id": 7
     }
   ],
   "detailsOrders": [
@@ -161,6 +221,79 @@
       ],
       "orderId": 2,
       "id": 2
+    },
+    {
+      "details": [
+        {
+          "orderId": 1,
+          "productName": "Essential TypeScript 4: From Beginner to Pro",
+          "quantity": 1
+        },
+        {
+          "orderId": 2,
+          "productName": "Hackeando el cerebro de tus compradores: PsychoGrowth",
+          "quantity": 2
+        },
+        {
+          "orderId": 3,
+          "productName": "Angular Routing: Learn To Create client-side and SPA with Routing and Navigation",
+          "quantity": 2
+        },
+        {
+          "orderId": 6,
+          "productName": "CL3 Rated High-Speed 4K HDMI Cable - 6 Feet",
+          "quantity": 1
+        }
+      ],
+      "orderId": 3,
+      "id": 3
+    },
+    {
+      "details": [
+        {
+          "orderId": 1,
+          "productName": "Essential TypeScript 4: From Beginner to Pro",
+          "quantity": 1
+        },
+        {
+          "orderId": 3,
+          "productName": "Angular Routing: Learn To Create client-side and SPA with Routing and Navigation",
+          "quantity": 1
+        },
+        {
+          "orderId": 2,
+          "productName": "Hackeando el cerebro de tus compradores: PsychoGrowth",
+          "quantity": 1
+        }
+      ],
+      "orderId": 4,
+      "id": 4
+    },
+    {
+      "details": [
+        {
+          "orderId": 8,
+          "productName": "External CD Drive USB 3.0 Portable CD DVD +/-RW Drive DVD/CD ROM",
+          "quantity": 1
+        },
+        {
+          "orderId": 7,
+          "productName": "Logitech MK270 Wireless Keyboard and Mouse Combo",
+          "quantity": 1
+        }
+      ],
+      "orderId": 5,
+      "id": 5
+    },
+    {
+      "details": [],
+      "orderId": 6,
+      "id": 6
+    },
+    {
+      "details": [],
+      "orderId": 7,
+      "id": 7
     }
   ]
 }

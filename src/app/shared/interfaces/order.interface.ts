@@ -10,7 +10,7 @@ export interface Order {
   date: string;
   shippingAddress: string;
   city: string;
-  pickup: boolean;
+  isDelivery: boolean;
 }
 
 export interface DetailsOrder {
